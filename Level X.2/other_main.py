@@ -2,31 +2,33 @@ import random
 import matplotlib.pyplot as plt
 
 list_numbers = []
-list_unique_numbers = []
 list_count_numbers = []
 
 
 def create_random_numbers():
     for i in range(0, 1000):
         new_number = random.randrange(0, 100)
-        list_numbers.append(new_number)
+        if new_number in list_numbers:
+            n_index = list_numbers.index(new_number)
+            list_count_numbers[n_index] += 1
+        else:
+            list_numbers.append(new_number)
+            list_count_numbers.append(1)
 
-
-def create_unique_list():
-    for n in list_numbers:
-        if n not in list_unique_numbers:
-            list_unique_numbers.append(n)
-
-
-def create_count_numbers():
-    for n in list_unique_numbers:
-        list_count_numbers.append(list_numbers.count(n))
 
 def print_numbers_count():
     c = 0
-    for i in list_unique_numbers:
+    for i in list_numbers:
         print("{} -> {}".format(i, list_count_numbers[c]))
         c += 1
+
+
+def main():
+
+    create_random_numbers()
+    print_numbers_count()
+    print(average(list_count_numbers))
+    analysis(list_count_numbers)
 
 
 def average(list_count):
@@ -50,17 +52,6 @@ def analysis(list_count):
 
     plt.plot(x, y)
     plt.show()
-
-
-def main():
-
-    create_random_numbers()
-    create_unique_list()
-    # list_unique_numbers.sort()
-    create_count_numbers()
-    print_numbers_count()
-    print(average(list_count_numbers))
-    analysis(list_count_numbers)
 
 
 if __name__ == '__main__':
