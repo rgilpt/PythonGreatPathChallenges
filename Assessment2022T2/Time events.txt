@@ -1,0 +1,57 @@
+
+
+The best way to track our effort is to document it. We want an app that allows to store and report time events that can be study, hobby, work (event type). It stores the date and the amount of time we performed in that event(reported time).
+To help us plan the work or plan to study, we want this app to allow to predict the time we need for a time event (predicted time).
+
+This project is for you, if you think that you need to add more information like type of the hobby (playing computer games), this is your project.
+
+Example of Information to be stored:
+
+time_event ={
+	"id": Integer
+    "date": datetime.date,
+    "name_event": String,
+	"type": event_type (Enum),
+	"PredictedTime": Float,
+	"ReportedTime": Float
+}
+
+time_events = []
+
+Mandatory
+
+ - Create new time event
+ - View for today: shows today time events
+ - View for Report event: create a reported time event
+ - View for Predict event: create a predicted time event
+ - Store time_events in a json file
+ - Open time_events from a json file when starting the app
+ - Menu to select the view the user wants
+ - View for the week
+ 
+ 
+Add-ons
+
+ - Error Handling
+ - View for the month
+ - View from date x until date y
+ - Search 
+ - See time as pomodoros
+ - Show percentage of work/study/work per day/week; join work with study and compare with hobby time
+ 
+Report
+ 
+ - Predicted time to make this project
+ - Time Spent
+ - Github shared with me (rgilpt - https://github.com/rgilpt)
+ - Map of the views (visual mock-up or low prototype)
+ - Small text of the selected solutions
+ - Conclusions
+ - Future work
+ 
+ 
+Useful information:
+
+https://docs.python.org/3/library/enum.html
+
+https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable?page=1&tab=scoredesc#tab-top
