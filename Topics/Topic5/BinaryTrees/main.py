@@ -1,12 +1,30 @@
+import random
+
+my_list = [3, 5, 1, 9]
+
+def rand_list(number_to_add):
+    for n in range(number_to_add):
+
+        my_list.append(random.randint(0, 100000))
 
 
-my_list = [45, 23, 32, 99, 2, 4, 6, 1, 5, 57, 3]
+def find_list(number_to_find):
+    count = 0
+    for n in my_list:
+        if n == number_to_find:
+            print("found")
+            count += 1
+    if count == 0:
+        print("not found")
+    else:
+        print(count)
+
 
 
 class Node:
     left_node = None
     right_node = None
-    search_value = 50
+    search_value = 5
     store_object = None
 
     def __init__(self, search_value):
@@ -38,14 +56,30 @@ class Node:
         if left_search_value != -1 or right_search_value != -1:
             print(str(self.search_value) + ": " + (str(left_search_value) if left_search_value != -1 else "") + " --- " + (str(right_search_value) if right_search_value != -1 else ""))
 
+    def search_my_value(self, my_value):
+        if self.search_value == my_value:
+            return True
+        if self.left_node is Node and self.right_node is None:
+            return False
+
+        if self.left_node is not None:
+            if self.left_node.search_my_value(my_value):
+                return True
+        if self.right_node is not None:
+            return self.right_node.search_my_value(my_value)
+
 
 def main():
+    rand_list(100000)
     root_node = Node(my_list[0])
     del my_list[0]
     for n in my_list:
         root_node.add_node(Node(n))
 
-    root_node.print_node()
+    find_list(405)
+    print(root_node.search_my_value(405))
+
+    # root_node.print_node()
 
 
 if __name__ == '__main__':
