@@ -1,0 +1,17 @@
+[
+  {
+    "doctorId": 1,
+    "firstName": "Maria",
+    "familyName": "Ballart"
+  },
+  {
+    "doctorId": 2,
+    "firstName": "Carlos",
+    "familyName": "Martinez"
+  },
+  {
+    "doctorId": 3,
+    "firstName": "Mary",
+    "familyName": "Wilson"
+  }
+]

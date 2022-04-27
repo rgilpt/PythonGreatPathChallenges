@@ -1,0 +1,32 @@
+[
+  {
+    "firstName": "John",
+    "familyName": "Johnson",
+    "procedures": ["2022-02-21"],
+    "doctor": 1
+  },
+  {
+    "firstName": "Marta",
+    "familyName": "Brown",
+    "procedures": ["2022-02-10"],
+    "doctor": 2
+  },
+  {
+    "firstName": "Julia",
+    "familyName": "Williams",
+    "procedures": ["2022-02-02", "2022-02-14"],
+    "doctor": 1
+  },
+  {
+    "firstName": "John",
+    "surnameName": "Davis",
+    "procedures": ["2022-01-29"],
+    "doctor": 3
+  },
+  {
+    "firstName": "Zelda",
+    "familyName": "Garcia",
+    "procedure": ["2022-01-15"],
+    "doctor": 1
+  }
+]
