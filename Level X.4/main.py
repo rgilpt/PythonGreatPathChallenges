@@ -28,7 +28,10 @@ def load_data():
 
 def main():
     my_data = load_data()
-    print(my_data)
+    # print(my_data)
+    my_doctors = my_data['doctors']
+    for d in my_doctors:
+        print(d)
     print("Done!")
 
 
