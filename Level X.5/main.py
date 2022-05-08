@@ -27,7 +27,10 @@ def print_all_students(list_students):
 
 
 def main():
-    print_all_students()
+    # print_all_students()
+    print(university['course'])
+    my_course = next(x for x in university['course'] if x['name'] == "Computer Science")
+    print(my_course)
 
 if __name__ == '__main__':
     main()

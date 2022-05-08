@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-img = cv2.imread("test.jpg")
+img = cv2.imread("3683.jpg")
 
 window_name = 'something'
 
@@ -12,8 +12,8 @@ cv2.imshow(window_name, img)
 window_name = 'warped'
 
 M = np.float32([
-	[1, 0, 3],
-	[0, 1, 3]
+	[1, 0, 1],
+	[0, 1, 0]
 ])
 
 img2 = cv2.warpAffine(img, M, (img.shape[1], img.shape[0]))
