@@ -33,10 +33,7 @@ async function getResponse() {
 	for(let i = 0; i < 3; i++) {
 	    document.getElementById('data').appendChild(printPerson(data[i]));
 	}
-
 }
-
-
 getResponse()
 
 
