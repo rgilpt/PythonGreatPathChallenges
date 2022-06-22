@@ -20,7 +20,7 @@ function printPerson(personObject) {
 
 async function getResponse() {
 	const response = await fetch(
-		'http://192.168.1.131:8000/students/',
+		'http://10.1.1.54:8000/students/',
 		{
 			method: 'GET',
 		}
