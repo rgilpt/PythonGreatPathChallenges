@@ -5,22 +5,38 @@ function printPerson(personObject) {
     let data = document.createElement('div');
 
     let name = document.createElement('p');
-    let node = document.createTextNode(personObject.name + " " + personObject.surname);
+    let node = document.createTextNode(personObject.first_name + " " + personObject.surname);
     name.appendChild(node);
     data.appendChild(name);
 
     let age = document.createElement('p');
-    node = document.createTextNode(personObject["age"]);
+    node = document.createTextNode(personObject["rate_interest"]);
     age.appendChild(node);
     data.appendChild(age);
 
-/
+
     return data;
 }
-let person = {
-    name : "James",
-    surname : "Done",
-    age : 42
+
+async function getResponse() {
+	const response = await fetch(
+		'http://192.168.1.131:8000/students/',
+		{
+			method: 'GET',
+		}
+	);
+	if (!response.ok) {
+		throw new Error(`HTTP error! status: ${response.status}`);
+	}
+	const data = await response.json();
+	console.log(data);
+	for(let i = 0; i < 3; i++) {
+	    document.getElementById('data').appendChild(printPerson(data[i]));
+	}
+
 }
-document.getElementById('data').appendChild(printPerson(person));
+
+
+getResponse()
+
 
