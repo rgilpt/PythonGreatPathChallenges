@@ -30,7 +30,7 @@ async function getResponse() {
 	}
 	const data = await response.json();
 	console.log(data);
-	for(let i = 0; i < 3; i++) {
+	for(let i = 0; i < 4; i++) {
 	    document.getElementById('data').appendChild(printPerson(data[i]));
 	}
 }
