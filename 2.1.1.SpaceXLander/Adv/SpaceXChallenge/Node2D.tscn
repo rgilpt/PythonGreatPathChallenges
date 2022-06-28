@@ -6,6 +6,7 @@
 
 [sub_resource type="PhysicsMaterial" id=3]
 bounce = 0.14
+absorbent = true
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.12688, 82.5569 )
@@ -22,6 +23,7 @@ texture = ExtResource( 2 )
 [node name="KinematicBody2D" type="RigidBody2D" parent="."]
 position = Vector2( -0.5, 6.5 )
 physics_material_override = SubResource( 3 )
+angular_damp = 3.0
 script = ExtResource( 3 )
 
 [node name="spr_lander2" type="Sprite" parent="KinematicBody2D"]

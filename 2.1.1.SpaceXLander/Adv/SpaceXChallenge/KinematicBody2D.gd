@@ -26,7 +26,7 @@ func _integrate_forces(state):
 	speed_vector.x = 0
 #	speed_vector.y += GRAVITY
 	var angle = self.transform.get_rotation()
-	print(angle)
+#	print(angle)
 	if Input.is_action_pressed("ui_left"):
 		add_torque(-10)
 		
