@@ -28,8 +28,48 @@ temperatures = [
 ]
 
 
+
+def main_():
+    my_list = ["David", "Ricky"]
+    print(my_list)
+
+    my_list.append("Stoyan")
+
+    print(my_list)
+    my_list.remove()
+    del my_list[2]
+
+    print(my_list)
+
 def main():
-    pass
+
+    for city_temp in temperatures:
+        print(city_temp['temperatures'])
+        correct_temp = []
+        skip_next = False
+        for i, t in enumerate(city_temp['temperatures']):
+            #analysis for temperature
+            if i > 0:
+                if not skip_next:
+
+                    delta = t - city_temp['temperatures'][i-1]
+                    print(t - city_temp['temperatures'][i-1])
+                    if delta < abs(5):
+                        correct_temp.append(t)
+                    else:
+                        skip_next = True
+                else:
+                    correct_temp.append(t)
+                    skip_next = False
+            else:
+                correct_temp.append(t)
+        print(correct_temp)
+
+        city_temp["corrected_temperatures"] = correct_temp
+        input("next?")
+
+
+    print(temperatures)
 
 if __name__ == '__main__':
     main()
